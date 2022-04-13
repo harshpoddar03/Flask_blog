@@ -1,16 +1,12 @@
-
-from ast import Sub
 import sys
-
-from nbformat import ValidationError
 sys.path.insert(1, '/users/podda/anaconda3/lib/site-packages')
-from wsgiref.validate import validator
-from flask_login import current_user
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileField , FileAllowed
-from wtforms import StringField , PasswordField , SubmitField , BooleanField, TextAreaField
-from wtforms.validators import DataRequired, Length , Email , EqualTo, ValidationError
+from flask_wtf.file import FileField, FileAllowed
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from flask_login import current_user
 from flaskblog.models import User
+
 
 
 class RegistrationForm(FlaskForm):
@@ -57,14 +53,6 @@ class UpdateAccountForm(FlaskForm):
             user = User.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('That email is taken. Please choose a different email')
-
-
-class PostForm(FlaskForm):
-    title = StringField('Title', validators = [DataRequired()])
-    content= TextAreaField('Content',validators=[DataRequired()])
-    submit = SubmitField('Post')
-
-
 
 
 class RequestResetForm(FlaskForm):
