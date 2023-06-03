@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(1, '/users/podda/anaconda3/lib/site-packages')
-from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from itsdangerous.url_safe import URLSafeTimedSerializer as Serializer
 from flaskblog import db,login_manager
 from datetime import datetime
 from flask_login import UserMixin

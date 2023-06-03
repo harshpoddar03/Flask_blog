@@ -30,6 +30,16 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+.new_start p{
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.media-body{
+  max-width: 80%;
 }
 
 .article-title {
@@ -43,6 +53,8 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
+  max-width:80%;
+
 }
 
 .article-img {
